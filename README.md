@@ -1,8 +1,6 @@
 # RailsAutoCommiter
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails_auto_commiter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+RailsAutoCommiter provides an auto commiter for Ruby on Rails.
+If you run `rails [generate,destroy] ...`, files Rails changed will be automatically commited by it.
 
 ## Installation
 
@@ -22,15 +20,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run the rails commands as always. The changed files are automatically committed.
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```zsh
+% rails generate model Post hoge
+Running via Spring preloader in process 78876
+Expected string default value for '--jbuilder'; got true (boolean)
+      invoke  active_record
+      create    db/migrate/20170115144306_create_posts.rb
+      create    app/models/post.rb
+      invoke    test_unit
+      create      test/models/post_test.rb
+      create      test/fixtures/posts.yml
+[master 0a9773b] result of 'rails generate model Post title body:text'.
+ 4 files changed, 28 insertions(+)
+ create mode 100644 app/models/post.rb
+ create mode 100644 db/migrate/20170115144306_create_posts.rb
+ create mode 100644 test/fixtures/posts.yml
+ create mode 100644 test/models/post_test.rb
+```
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails_auto_commiter. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## License
+
+RailsAutoCommiter is released under the [MIT License](http://www.opensource.org/licenses/MIT).
