@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rails_auto_commiter/version'
 
 Gem::Specification.new do |spec|
+  spec.platform      = Gem::Platform::RUBY
   spec.name          = "rails_auto_commiter"
   spec.version       = RailsAutoCommiter::VERSION
   spec.authors       = ["Hiroki Shirai"]
