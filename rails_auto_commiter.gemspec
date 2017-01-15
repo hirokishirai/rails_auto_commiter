@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Auto git commiter for Ruby on Rails.}
   spec.description   = spec.summary
   spec.homepage      = 'https://github.com/hirokishirai/rails_auto_commiter'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
