@@ -36,7 +36,6 @@ module RailsAutoCommiter
 
         protected
           def on_conflict_behavior(&block)
-            options = base.options.dup.merge(config)
             if !identical? && pretend?
               RailsAutoCommiter.commit_files << destination
             end
