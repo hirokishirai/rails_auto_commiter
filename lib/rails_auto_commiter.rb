@@ -40,7 +40,8 @@ Rails::CommandsTasks.send(:prepend, RailsAutoCommiter::Rails::CommandsTasks)
 at_exit do
   unless `git status`.match(/nothing to commit, working directory clean/)
     system('git add .')
-    system("git commit -m \"result of 'rails #{RailsAutoCommiter.sub_commands}'.\"")
+    sub_commands = RailsAutoCommiter.sub_commands.join(' ')
+    system("git commit -m \"result of 'rails #{sub_commands}'.\"")
   end
   if RailsAutoCommiter.git_stashed?
     system('git stash pop')
